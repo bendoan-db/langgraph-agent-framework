@@ -1,0 +1,13 @@
+databricks_llm_config:
+  llm_endpoint_name: databricks-meta-llama-3.1-405b-instruct
+  llm_endpoint_type: chat
+  llm_parameters:
+    max_tokens: 1500
+    temperature: 0.01
+databricks_resources:
+  catalog: doan_demo_catalog
+  schema: multiagent
+open_ai_config:
+  llm_parameters:
+    temperature: 0.01
+  model_name: ASK-BEFORE-USING-doan-gpt-4o
