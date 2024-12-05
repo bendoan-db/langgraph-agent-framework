@@ -76,8 +76,12 @@ def get_final_message(response):
   try:
     final_response = response["messages"][-1].content
     return final_response
-  except Exception as e:
-    return f"Error parsing output: {e} \n\n Full output:" + str(response)
+  except:
+    try:
+      final_response = response["chatbot"]["messages"][-1].content #handle streaming responses
+      return final_response
+    except Exception as e:
+      return f"Error parsing output: {e} \n\n Full output:" + str(response)
 
 # COMMAND ----------
 
